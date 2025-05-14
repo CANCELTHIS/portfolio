@@ -18,35 +18,15 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      id: 1,
-      title: 'Weather App',
-      description: 'I built a simple and responsive weather app using React. It fetches real-time weather data using Axios and displays it in a clean UI with the help of React Icons. The app allows users to search for any city and view key weather details like temperature, humidity, and conditions. 🚀🌦️',
-      image: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D',
-      tags: ['React'],
-      github: 'https://github.com/CANCELTHIS/weather-App',
-      demo: 'https://weather-app-sable-seven-43.vercel.app/',
-      category: 'frontend'
-    },
-    {
-      id: 2,
-      title: 'E-store',
-      description: 'I built a full-stack E-Store application using React for the frontend and Node.js with Express for the backend. The app includes complete CRUD functionality, allowing users to browse, add, update, and delete products seamlessly. It features secure authentication, a dynamic shopping cart, and a smooth user experience. The backend is powered by Express.js, handling API requests efficiently. 🚀🛒',
-      image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGUlMjBjb21tZXJjZXxlbnwwfHwwfHx8MA%3D%3D',
-      tags: ['React', 'Node.js', 'MongoDB',"Express"],
-      github: 'https://github.com/CANCELTHIS/E-store',
-      demo: 'https://e-store-reia.onrender.com/',
-      category: 'fullstack'
-    },
-    {
-      id: 3,
-      title: 'Expense Tracker',
-      description: 'I built an Expense Tracker application using React to help users manage their finances efficiently. The app allows users to add, edit, and delete expenses, categorize transactions, and track their spending over time. It features a clean and interactive UI, making budgeting simple and intuitive. 🚀💰',
-      image: 'https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZXhwZW5zZSUyMHRyYWNrZXJ8ZW58MHx8MHx8fDA%3D',
-      tags: ['React'],
-      github: 'https://github.com/BirukNigusie/expense-tracker-app',
-      demo: 'https://main--cosmic-biscuit-44e2d0.netlify.app/',
-      category: 'frontend'
-    }
+  id: 2,
+  title: 'Besocial',
+  description: 'I built a full-stack social media app using Next.js for the frontend, Prisma with PostgreSQL for the backend, and Clerk for authentication. The app includes features like user profiles, follow/unfollow functionality, post creation with file uploads, and real-time updates. It is styled with Tailwind CSS and Shadcn UI to ensure a clean, responsive design. 🚀💬',
+  image: 'https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNvY2lhbCUyMG1lZGlhfGVufDB8fDB8fHww',
+  tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'Clerk'],
+  github: 'https://github.com/CANCELTHIS/besocial',
+  demo: 'https://besocial-gray.vercel.app/',
+  category: 'fullstack'
+}
   ];
 
   const filteredProjects = filter === 'all' 
@@ -79,7 +59,7 @@ const Projects: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">My Projects</h2>
-          <div className="w-20 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-blue-500 mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-3xl mx-auto text-lg">
             Here are some of my recent projects. Each project reflects my skills and expertise in different areas of web development.
           </p>
@@ -93,7 +73,7 @@ const Projects: React.FC = () => {
                 onClick={() => setFilter(category)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                   filter === category
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
                 }`}
               >
@@ -114,7 +94,7 @@ const Projects: React.FC = () => {
             <motion.div
               key={project.id}
               variants={item}
-              className="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-emerald-500/10 transition-shadow duration-300"
+              className="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/10 transition-shadow duration-300"
             >
               <div className="relative overflow-hidden group">
                 <img
@@ -128,7 +108,7 @@ const Projects: React.FC = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-slate-800/80 p-2 rounded-full text-white hover:bg-emerald-600 transition-colors duration-300"
+                      className="bg-slate-800/80 p-2 rounded-full text-white hover:bg-blue-600 transition-colors duration-300"
                     >
                       <Github size={18} />
                     </a>
@@ -136,7 +116,7 @@ const Projects: React.FC = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-slate-800/80 p-2 rounded-full text-white hover:bg-emerald-600 transition-colors duration-300"
+                      className="bg-slate-800/80 p-2 rounded-full text-white hover:bg-blue-600 transition-colors duration-300"
                     >
                       <ExternalLink size={18} />
                     </a>
@@ -150,7 +130,7 @@ const Projects: React.FC = () => {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-700 text-emerald-400"
+                      className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-700 text-blue-400"
                     >
                       {tag}
                     </span>

@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-emerald-500 text-xl md:text-2xl font-medium mb-4">Hello, I'm</h2>
+            <h2 className="text-blue-500 text-xl md:text-2xl font-medium mb-4">Hello, I'm</h2>
           </motion.div>
           
           <motion.div
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
                 1000,
                 'React Specialist',
                 1000,
-                'Node.js Developer',
+                'Express.js Developer',
                 1000,
                 'MongoDB Expert',
                 1000,
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           >
             <a
               href="#contact"
-              className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-full transition-colors duration-300 shadow-lg hover:shadow-emerald-500/20"
+              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-colors duration-300 shadow-lg hover:shadow-blue-500/20"
             >
               Hire Me
             </a>
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <Link to="about" smooth={true} duration={500} className="cursor-pointer">
-          <ChevronDown size={32} className="text-emerald-500" />
+          <ChevronDown size={32} className="text-blue-500" />
         </Link>
       </div>
     </section>

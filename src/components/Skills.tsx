@@ -1,27 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaReact, FaJs, FaNodeJs, FaHtml5, FaCss3Alt, FaDatabase } from 'react-icons/fa';
+import { DiSass, DiGit } from 'react-icons/di';
+import { SiTypescript, SiNextdotjs, SiExpress, SiMongodb } from 'react-icons/si';
 
 interface Skill {
   name: string;
-  percentage: number;
-  color: string;
+  category: string; // Either "Frontend" or "Backend"
+  icon: JSX.Element;
 }
 
 const Skills: React.FC = () => {
   const frontendSkills: Skill[] = [
-    { name: 'React.js', percentage: 95, color: 'bg-blue-500' },
-    { name: 'JavaScript', percentage: 90, color: 'bg-yellow-500' },
-    { name: 'TypeScript', percentage: 85, color: 'bg-blue-600' },
-    { name: 'HTML/CSS', percentage: 90, color: 'bg-orange-500' },
-    { name: 'Tailwind CSS', percentage: 85, color: 'bg-teal-500' },
+    { name: 'HTML/CSS', category: 'Frontend', icon: <FaHtml5 className='text-blue-600'/> },
+    { name: 'JavaScript', category: 'Frontend', icon: <FaJs className='text-blue-600'/> },
+    { name: 'React.js', category: 'Frontend', icon: <FaReact className='text-blue-600'/> }, 
+    { name: 'TypeScript', category: 'Frontend', icon: <SiTypescript className='text-blue-600'/> },
+    { name: 'Tailwind CSS', category: 'Frontend', icon: <DiSass className='text-blue-600'/> },
+    { name: 'Next.js', category: 'Backend', icon: <SiNextdotjs className='text-blue-600'/> },
   ];
 
   const backendSkills: Skill[] = [
-    { name: 'Node.js', percentage: 90, color: 'bg-green-500' },
-    { name: 'Express.js', percentage: 85, color: 'bg-gray-500' },
-    { name: 'MongoDB', percentage: 90, color: 'bg-green-600' },
-    { name: 'RESTful APIs', percentage: 85, color: 'bg-purple-500' },
-    
+    { name: 'Next.js', category: 'Backend', icon: <SiNextdotjs className='text-blue-600'/> },
+    { name: 'Express.js', category: 'Backend', icon: <SiExpress className='text-blue-600'/> },
+    { name: 'RESTful APIs', category: 'Backend', icon: <FaDatabase className='text-blue-600'/> },
   ];
 
   const container = {
@@ -50,7 +52,7 @@ const Skills: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">My Skills</h2>
-          <div className="w-20 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-blue-500 mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-3xl mx-auto text-lg">
             I've developed a diverse set of skills throughout my career. Here's a comprehensive overview of my technical expertise.
           </p>
@@ -64,22 +66,14 @@ const Skills: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">Frontend Development</h3>
-            <div className="space-y-6">
+            <ul className="space-y-4 text-gray-300">
               {frontendSkills.map((skill, index) => (
-                <motion.div key={index} variants={item}>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-300">{skill.name}</span>
-                    <span className="text-gray-400">{skill.percentage}%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div
-                      className={`h-2.5 rounded-full ${skill.color}`}
-                      style={{ width: `${skill.percentage}%` }}
-                    ></div>
-                  </div>
-                </motion.div>
+                <motion.li key={index} variants={item} className="text-lg flex items-center space-x-3">
+                  <span className="text-xl">{skill.icon}</span>
+                  <span>{skill.name}</span>
+                </motion.li>
               ))}
-            </div>
+            </ul>
           </motion.div>
 
           <motion.div
@@ -89,22 +83,14 @@ const Skills: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">Backend Development</h3>
-            <div className="space-y-6">
+            <ul className="space-y-4 text-gray-300">
               {backendSkills.map((skill, index) => (
-                <motion.div key={index} variants={item}>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-300">{skill.name}</span>
-                    <span className="text-gray-400">{skill.percentage}%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div
-                      className={`h-2.5 rounded-full ${skill.color}`}
-                      style={{ width: `${skill.percentage}%` }}
-                    ></div>
-                  </div>
-                </motion.div>
+                <motion.li key={index} variants={item} className="text-lg flex items-center space-x-3">
+                  <span className="text-xl">{skill.icon}</span>
+                  <span>{skill.name}</span>
+                </motion.li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         </div>
 
@@ -115,7 +101,10 @@ const Skills: React.FC = () => {
           viewport={{ once: true }}
           className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center"
         >
-          
+          {/* Add GitHub, Logs, or other additional information here */}
+          <a href="https://github.com/CANCELTHIS/" className="text-blue-500 hover:underline">
+            View on GitHub
+          </a>
         </motion.div>
       </div>
     </section>
